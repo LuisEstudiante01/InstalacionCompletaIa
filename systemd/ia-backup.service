@@ -1,0 +1,9 @@
+[Unit]
+Description=Weekly personal backup (Engram + config)
+
+[Service]
+Type=oneshot
+Environment=PATH=/home/linuxbrew/.linuxbrew/bin:/usr/local/bin:/usr/bin:/bin
+ExecStart=__REPO__/backup.sh
+Nice=19
+IOSchedulingClass=idle
