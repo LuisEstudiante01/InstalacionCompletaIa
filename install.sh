@@ -39,7 +39,9 @@ step_tools() {
     "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
   log "opencode"
+  export PATH="$HOME/.opencode/bin:$HOME/.local/bin:$PATH"
   command -v opencode >/dev/null || curl -fsSL https://opencode.ai/install | bash
+  opencode --version >/dev/null 2>&1 || warn "opencode is not runnable in this shell; gentle-ai will fail for the opencode agent."
 
   log "herdr (official installer from herdr.dev)"
   export PATH="$HOME/.local/bin:$PATH"
