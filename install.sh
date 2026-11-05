@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Complete terminal + AI-agent environment for Ubuntu/Debian. Idempotent.
-# Usage: ./install.sh [all|packages|tools|link]
+# Usage: ./install.sh [all|packages|tools|link|wezterm]
 set -euo pipefail
 
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -13,7 +13,7 @@ warn() { printf '\033[1;33m!!\033[0m %s\n' "$*" >&2; }
 step_packages() {
   log "System packages (apt)"
   sudo apt-get update
-  sudo apt-get install -y build-essential curl file git procps zsh tmux python3 unzip
+  sudo apt-get install -y build-essential curl file git procps zsh tmux python3 unzip fontconfig gpg
 }
 
 step_tools() {
@@ -94,11 +94,35 @@ step_link() {
   fi
 }
 
+step_wezterm() {
+  log "Nerd Font (IosevkaTerm)"
+  if ! fc-list 2>/dev/null | grep -qi "IosevkaTerm"; then
+    tmp="$(mktemp -d)"
+    curl -fsSL -o "$tmp/IosevkaTerm.zip" https://github.com/ryanoasis/nerd-fonts/releases/latest/download/IosevkaTerm.zip
+    mkdir -p "$HOME/.local/share/fonts/IosevkaTerm"
+    unzip -qo "$tmp/IosevkaTerm.zip" -d "$HOME/.local/share/fonts/IosevkaTerm"
+    rm -rf "$tmp"; fc-cache -f
+  fi
+
+  log "WezTerm (official apt repository)"
+  if ! command -v wezterm >/dev/null; then
+    curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
+    echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' \
+      | sudo tee /etc/apt/sources.list.d/wezterm.list >/dev/null
+    sudo chmod 644 /usr/share/keyrings/wezterm-fury.gpg
+    sudo apt-get update
+    sudo apt-get install -y wezterm
+  fi
+  link "$REPO/wezterm/wezterm.lua" "$HOME/.config/wezterm/wezterm.lua"
+}
+
 case "${1:-all}" in
   packages) step_packages ;;
   tools)    step_tools ;;
   link)     step_link ;;
-  all)      step_packages; step_tools; step_link ;;
-  *) echo "Usage: $0 [all|packages|tools|link]"; exit 1 ;;
+  wezterm)  step_wezterm ;;
+  all)      step_packages; step_tools; step_link
+              if [ -n "${DISPLAY:-}${WAYLAND_DISPLAY:-}" ]; then step_wezterm; else warn "No graphical session: skipped WezTerm (run ./install.sh wezterm on a desktop)."; fi ;;
+  *) echo "Usage: $0 [all|packages|tools|link|wezterm]"; exit 1 ;;
 esac
 log "Done. To protect YOUR data with automatic weekly backups, run: ./backup-init.sh"

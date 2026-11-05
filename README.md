@@ -12,10 +12,10 @@ with the official [gentle-ai](https://github.com/Gentleman-Programming) skills.
 
     sudo apt-get install -y git curl
     git clone https://github.com/LuisEstudiante01/InstalacionCompletaIa.git ~/InstalacionCompletaIa
-    cd ~/InstalacionCompletaIa && ./install.sh      # or: packages | tools | link
+    cd ~/InstalacionCompletaIa && ./install.sh      # or: packages | tools | link | wezterm
 
 Existing files are moved to `~/.ia-install-backup/<timestamp>/` before anything is linked.
-Run `gh auth login` first so gentle-ai can reach GitHub. Not automated: herdr install, WezTerm config.
+Run `gh auth login` first so gentle-ai can reach GitHub. WezTerm (+ Iosevka Nerd Font) installs on desktops via `./install.sh wezterm`; on Windows+WSL use `wezterm/wezterm-windows-wsl.lua`.
 
 ## Back up YOUR data (private, automatic, near-zero cost)
 
