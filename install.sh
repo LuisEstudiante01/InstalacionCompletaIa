@@ -48,6 +48,12 @@ step_tools() {
   export PATH="$HOME/.local/bin:$PATH"
   command -v herdr >/dev/null || curl -fsSL https://herdr.dev/install.sh | sh || warn "herdr install failed; see https://herdr.dev"
 
+  log "Claude Code (official installer)"
+  command -v claude >/dev/null || curl -fsSL https://claude.ai/install.sh | bash || warn "Claude Code install failed; see https://claude.ai"
+
+  log "Antigravity CLI / agy (official installer)"
+  command -v agy >/dev/null || curl -fsSL https://antigravity.google/cli/install.sh | bash || warn "agy install failed; see https://antigravity.google"
+
   log "gentle-ai (official skills, agents, personas)"
   gh auth status >/dev/null 2>&1 || warn "Run 'gh auth login' for GitHub access."
   # Agents default to Claude Code + OpenCode. Override: IA_AGENTS=claude-code,opencode,pi ./install.sh tools

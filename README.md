@@ -2,7 +2,7 @@
 
 One-command setup of a complete terminal + AI-coding-agent environment on **Ubuntu / Debian**
 (also works on WSL2 with systemd): zsh + Powerlevel10k, Neovim (LazyVim), herdr, tmux tools,
-Claude Code / OpenCode configuration, and persistent agent memory ([Engram](https://github.com/Gentleman-Programming))
+Claude Code, OpenCode and Antigravity (agy) installation and configuration, and persistent agent memory ([Engram](https://github.com/Gentleman-Programming))
 with the official [gentle-ai](https://github.com/Gentleman-Programming) skills.
 
 > This repository contains **no personal data**. It is read-only for everyone except its owner:
