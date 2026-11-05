@@ -1,0 +1,9 @@
+[Unit]
+Description=Weekly push of this repository's changes (owner only)
+
+[Service]
+Type=oneshot
+Environment=PATH=/home/linuxbrew/.linuxbrew/bin:/usr/local/bin:/usr/bin:/bin
+ExecStart=__REPO__/sync-repo.sh
+Nice=19
+IOSchedulingClass=idle

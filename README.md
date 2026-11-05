@@ -24,6 +24,14 @@ Run `gh auth login` first so gentle-ai can reach GitHub. WezTerm (+ Iosevka Nerd
 Runs Homebrew, `gentle-ai sync`, Claude Code, OpenCode, agy, herdr, codegraph and apt, in that order.
 A failing step is reported at the end and never blocks the rest.
 
+## Automatic weekly jobs
+
+    ./auto-init.sh              # weekly tool updates (Sat 03:00, apt is skipped: no sudo when unattended)
+    ./auto-init.sh --publish    # owner only: also push this repo's changes weekly (Sun 04:00)
+
+`sync-repo.sh` only commits changes to files git already tracks, and aborts if the added lines contain
+an email, token, private key or `/home/<user>/` path. Disable: `systemctl --user disable --now ia-update.timer ia-sync.timer`.
+
 ## Back up YOUR data (private, automatic, near-zero cost)
 
     ./backup-init.sh [repo-name]
@@ -43,6 +51,7 @@ Neovim config into that private repo. Nothing from you is ever pushed here.
 | Path | Purpose |
 |---|---|
 | `install.sh` | apt packages, Homebrew tools, gentle-ai, config linking |
+| `auto-init.sh`, `sync-repo.sh` | weekly automatic updates and (owner) repo push |
 | `update.sh` | update every tool in one command |
 | `backup-init.sh`, `backup.sh`, `restore.sh` | your private backup and restore |
 | `systemd/` | weekly timer units used by `backup-init.sh` |

@@ -1,0 +1,10 @@
+[Unit]
+Description=Weekly update of all installed tools
+
+[Service]
+Type=oneshot
+Environment=PATH=/home/linuxbrew/.linuxbrew/bin:/usr/local/bin:/usr/bin:/bin
+# --no-apt: an unattended job cannot ask for a sudo password.
+ExecStart=__REPO__/update.sh --no-apt
+Nice=19
+IOSchedulingClass=idle
