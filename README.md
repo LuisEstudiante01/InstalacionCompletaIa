@@ -17,6 +17,13 @@ with the official [gentle-ai](https://github.com/Gentleman-Programming) skills.
 Existing files are moved to `~/.ia-install-backup/<timestamp>/` before anything is linked.
 Run `gh auth login` first so gentle-ai can reach GitHub. WezTerm (+ Iosevka Nerd Font) installs on desktops via `./install.sh wezterm`; on Windows+WSL use `wezterm/wezterm-windows-wsl.lua`.
 
+## Update everything
+
+    ./update.sh            # add --no-apt to skip the system (sudo) upgrade
+
+Runs Homebrew, `gentle-ai sync`, Claude Code, OpenCode, agy, herdr, codegraph and apt, in that order.
+A failing step is reported at the end and never blocks the rest.
+
 ## Back up YOUR data (private, automatic, near-zero cost)
 
     ./backup-init.sh [repo-name]
@@ -36,6 +43,7 @@ Neovim config into that private repo. Nothing from you is ever pushed here.
 | Path | Purpose |
 |---|---|
 | `install.sh` | apt packages, Homebrew tools, gentle-ai, config linking |
+| `update.sh` | update every tool in one command |
 | `backup-init.sh`, `backup.sh`, `restore.sh` | your private backup and restore |
 | `systemd/` | weekly timer units used by `backup-init.sh` |
 | `nvim/`, `herdr/`, `zsh/`, `claude/` | base configuration shipped as a starting point |
