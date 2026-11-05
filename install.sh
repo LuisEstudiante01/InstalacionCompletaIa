@@ -27,7 +27,12 @@ step_tools() {
   brew tap gentleman-programming/tap
   # Recent Homebrew refuses third-party taps until trusted; older versions lack 'brew trust'.
   brew trust gentleman-programming/tap 2>/dev/null || true
-  brew install gentle-ai engram codegraph gh neovim git lazygit fzf fzf-tab eza bat fd atuin carapace gga
+  brew install --formula gentleman-programming/tap/gentle-ai gentleman-programming/tap/engram \
+    gentleman-programming/tap/gga
+  brew install gh neovim git lazygit fzf fzf-tab eza bat fd atuin carapace node
+
+  log "codegraph (npm)"
+  npm install -g @colbymchenry/codegraph
 
   log "oh-my-zsh"
   [ -d "$HOME/.oh-my-zsh" ] || RUNZSH=no CHSH=no sh -c \
