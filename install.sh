@@ -25,6 +25,8 @@ step_tools() {
 
   log "Tap + formulae"
   brew tap gentleman-programming/tap
+  # Recent Homebrew refuses third-party taps until trusted; older versions lack 'brew trust'.
+  brew trust gentleman-programming/tap 2>/dev/null || true
   brew install gentle-ai engram codegraph gh neovim git lazygit fzf fzf-tab eza bat fd atuin carapace gga
 
   log "oh-my-zsh"
