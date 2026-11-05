@@ -41,11 +41,16 @@ step_tools() {
   log "opencode"
   command -v opencode >/dev/null || curl -fsSL https://opencode.ai/install | bash
 
-  command -v herdr >/dev/null || warn "herdr not found: install it manually (see its docs) and re-run './install.sh tools'."
+  log "herdr (official installer from herdr.dev)"
+  export PATH="$HOME/.local/bin:$PATH"
+  command -v herdr >/dev/null || curl -fsSL https://herdr.dev/install.sh | sh || warn "herdr install failed; see https://herdr.dev"
 
   log "gentle-ai (official skills, agents, personas)"
   gh auth status >/dev/null 2>&1 || warn "Run 'gh auth login' for GitHub access."
-  gentle-ai install || warn "gentle-ai install may need interaction; run 'gentle-ai' manually."
+  # Agents default to Claude Code + OpenCode. Override: IA_AGENTS=claude-code,opencode,pi ./install.sh tools
+  # (the 'pi' agent additionally requires the `pi` executable to be installed first).
+  gentle-ai install --agent "${IA_AGENTS:-claude-code,opencode}" --preset full-gentleman \
+    || warn "gentle-ai install failed; run 'gentle-ai' for the interactive installer."
 }
 
 # link SRC DEST: move an existing real file aside, then symlink
