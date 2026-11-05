@@ -29,7 +29,8 @@ step_tools() {
   brew trust gentleman-programming/tap 2>/dev/null || true
   brew install --formula gentleman-programming/tap/gentle-ai gentleman-programming/tap/engram \
     gentleman-programming/tap/gga
-  brew install gh neovim git lazygit fzf fzf-tab eza bat fd atuin carapace node
+  brew install gh neovim git lazygit fzf fzf-tab eza bat fd atuin carapace node \
+    zoxide powerlevel10k zsh-autosuggestions zsh-syntax-highlighting
 
   log "codegraph (npm)"
   npm install -g @colbymchenry/codegraph

@@ -92,7 +92,7 @@ else
     source_if_exists "/usr/share/powerlevel10k/powerlevel10k.zsh-theme"
 fi
 
-export PROJECT_PATHS="/home/alanbuscaglia/work"
+export PROJECT_PATHS="$HOME/work"
 export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_DEFAULT_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exlude .git"
@@ -125,7 +125,7 @@ zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 source <(carapace _carapace)
 
 eval "$(fzf --zsh)"
-eval "$(zoxide init zsh)"
+command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
 eval "$(atuin init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
