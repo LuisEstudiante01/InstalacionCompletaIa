@@ -12,7 +12,7 @@ Claude Code, OpenCode y Antigravity (agy), y memoria persistente para agentes co
 y las skills oficiales de [gentle-ai](https://github.com/Gentleman-Programming/gentle-ai).
 
 > Este repositorio **no contiene datos personales**. Solo su dueño puede modificarlo:
-> clonalo para usarlo o hacé un fork para personalizarlo.
+> clónalo para usarlo o haz un fork para personalizarlo.
 
 ### Instalar
 
@@ -21,15 +21,15 @@ y las skills oficiales de [gentle-ai](https://github.com/Gentleman-Programming/g
     cd ~/InstalacionCompletaIa && ./install.sh      # o: packages | tools | link | wezterm
 
 Los archivos existentes se mueven a `~/.ia-install-backup/<fecha>/` antes de enlazar cualquier configuración.
-Ejecutá `gh auth login` antes, para que gentle-ai pueda acceder a GitHub. WezTerm (con la fuente Iosevka Nerd Font) se instala
-en equipos con escritorio mediante `./install.sh wezterm`; en Windows con WSL usá `wezterm/wezterm-windows-wsl.lua`.
+Ejecuta `gh auth login` antes, para que gentle-ai pueda acceder a GitHub. WezTerm (con la fuente Iosevka Nerd Font) se instala
+en equipos con escritorio mediante `./install.sh wezterm`; en Windows con WSL usa `wezterm/wezterm-windows-wsl.lua`.
 
 Por defecto gentle-ai se instala para Claude Code y OpenCode. Para sumar otros agentes:
 `IA_AGENTS=claude-code,opencode,antigravity ./install.sh tools`.
 
 ### Actualizar todo
 
-    ./update.sh            # agregá --no-apt para omitir la actualización del sistema (requiere sudo)
+    ./update.sh            # agrega --no-apt para omitir la actualización del sistema (requiere sudo)
 
 Ejecuta, en este orden: Homebrew, `gentle-ai sync`, Claude Code, OpenCode, agy, herdr, codegraph y apt.
 Si un paso falla, se informa al final y no bloquea a los demás.
@@ -43,7 +43,7 @@ Si un paso falla, se informa al final y no bloquea a los demás.
 un correo, un token, una clave privada o una ruta `/home/<usuario>/`.
 Para desactivar: `systemctl --user disable --now ia-update.timer ia-sync.timer`.
 
-### Respaldá TUS datos (privado, automático, casi sin consumo)
+### Respalda TUS datos (privado, automático, casi sin consumo)
 
     ./backup-init.sh [nombre-del-repo]
 
@@ -91,11 +91,11 @@ Este repositorio es un proyecto comunitario independiente y no está afiliado ni
 
 ### Notas
 
-Revisá `install.sh` antes de ejecutarlo: instala software y usa `sudo`. La instalación (`install.sh`) se probó en una máquina
+Revisa `install.sh` antes de ejecutarlo: instala software y usa `sudo`. La instalación (`install.sh`) se probó en una máquina
 virtual con Debian. Los scripts `update.sh`, `auto-init.sh`, `backup-init.sh`, `backup.sh` y `restore.sh` todavía no se
 probaron de punta a punta. Licencia MIT.
 
-[↑ Volver arriba / Back to top](#instalacionCompletaIa)
+[↑ Volver arriba / Back to top](#instalacioncompletaia)
 
 ---
 
