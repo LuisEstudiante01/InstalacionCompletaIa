@@ -189,4 +189,4 @@ Review `install.sh` before running it: it installs software and uses `sudo`. `in
 virtual machine. `update.sh`, `auto-init.sh`, `backup-init.sh`, `backup.sh` and `restore.sh` have not yet been run
 end-to-end. Licensed under MIT.
 
-[↑ Back to top / Volver arriba](##Instalacion-Completa-ia)
+[↑ Back to top / Volver arriba](#Instalacion-Completa-ia)
