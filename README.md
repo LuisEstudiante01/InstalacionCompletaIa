@@ -1,4 +1,4 @@
-# InstalacionCompletaIa
+# Instalacion Completa Ia
 
 **[English](#english) | [Español](#español)**
 
