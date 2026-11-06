@@ -95,7 +95,7 @@ Revisa `install.sh` antes de ejecutarlo: instala software y usa `sudo`. La insta
 virtual con Debian. Los scripts `update.sh`, `auto-init.sh`, `backup-init.sh`, `backup.sh` y `restore.sh` todavía no se
 probaron de punta a punta. Licencia MIT.
 
-[↑ Volver arriba / Back to top](#instalacioncompletaia)
+[↑ Volver arriba / Back to top](#Instalacion Completa Ia)
 
 ---
 
