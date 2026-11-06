@@ -78,6 +78,27 @@ Also used: [herdr](https://herdr.dev), [WezTerm](https://wezterm.org), [OpenCode
 [Claude Code](https://claude.ai) and [Homebrew](https://brew.sh).
 This repository is an independent community project and is not affiliated with or endorsed by any of them.
 
+## Créditos (Español)
+
+Este proyecto es solo un instalador y un conjunto de configuraciones iniciales. El trabajo real lo hace el ecosistema de
+[Gentleman Programming](https://github.com/Gentleman-Programming). Muchas gracias a su autor y a sus colaboradores por crear
+estas herramientas y mantenerlas de código abierto.
+
+| Proyecto | Qué hace |
+|---|---|
+| [gentle-ai](https://github.com/Gentleman-Programming/gentle-ai) | Configura los agentes de IA que ya usás (Claude Code, OpenCode, Codex, Pi y más): memoria persistente, Organic Driven Development, skills seleccionadas, servidores MCP, personas y revisión acotada opcional. |
+| [gentle-shell](https://github.com/Gentleman-Programming/gentle-shell) (antes `gentle-pi`) | Un espacio de trabajo de terminal nativo de Pi para desarrollar con IA: agentes de código en paralelo, tareas en vivo, diffs de Git, memoria persistente y control de permisos en una sola interfaz. |
+| [engram](https://github.com/Gentleman-Programming/engram) | Memoria persistente para agentes de IA: un único binario en Go con SQLite + FTS5, servidor MCP, API HTTP, CLI y TUI. |
+| [gentleman-guardian-angel](https://github.com/Gentleman-Programming/gentleman-guardian-angel) (`gga`) | Revisión de código con IA, independiente del proveedor, que hace cumplir tus estándares (Claude, Gemini, Codex, Ollama). |
+| [homebrew-tap](https://github.com/Gentleman-Programming/homebrew-tap) | El tap de Homebrew que distribuye gentle-ai, engram y gga; lo usa `install.sh`. |
+| [gentle-wiki](https://github.com/Gentleman-Programming/gentle-wiki) | Guías y referencias mantenidas por la comunidad sobre desarrollo de software asistido por IA y el ecosistema Gentleman Programming. |
+| [gentle-ai-community-docs](https://github.com/Gentleman-Programming/gentle-ai-community-docs) | La documentación comunitaria bilingüe (inglés/español) de Gentle AI, en [docs-gentle-ai.netlify.app](https://docs-gentle-ai.netlify.app); también se ofrece a los agentes de código mediante un servidor MCP de solo lectura. |
+| [Gentleman.Dots](https://github.com/Gentleman-Programming/Gentleman.Dots) | La configuración personal de LazyVim del autor. |
+
+También se usan: [herdr](https://herdr.dev), [WezTerm](https://wezterm.org), [OpenCode](https://opencode.ai),
+[Claude Code](https://claude.ai) y [Homebrew](https://brew.sh).
+Este repositorio es un proyecto comunitario independiente y no está afiliado ni respaldado por ninguno de ellos.
+
 ## Notes
 
 Review `install.sh` before running it: it installs software and uses `sudo`. It has been syntax-checked
