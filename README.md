@@ -91,9 +91,10 @@ Este repositorio es un proyecto comunitario independiente y no está afiliado ni
 
 ### Notas
 
-Revisa `install.sh` antes de ejecutarlo: instala software y usa `sudo`. La instalación (`install.sh`) se probó en una máquina
-virtual con Debian. Los scripts `update.sh`, `auto-init.sh`, `backup-init.sh`, `backup.sh` y `restore.sh` todavía no se
-probaron de punta a punta. Licencia MIT.
+Revisa `install.sh` antes de ejecutarlo: instala software y usa `sudo`. Todos los scripts se probaron en una máquina
+virtual con Debian: `install.sh`, `update.sh --no-apt`, `auto-init.sh` (el timer quedó activo), `backup-init.sh`, `backup.sh` y
+`restore.sh`. Quedan sin probar: la importación de Engram con datos reales (la prueba usó una memoria vacía), la ejecución del
+servicio disparada por el timer, `auto-init.sh --publish` y el paso `./install.sh wezterm` en esa VM. Licencia MIT.
 
 [↑ Volver arriba / Back to top](#Instalacion-Completa-ia)
 
@@ -185,8 +186,9 @@ This repository is an independent community project and is not affiliated with o
 
 ### Notes
 
-Review `install.sh` before running it: it installs software and uses `sudo`. `install.sh` has been tested on a Debian
-virtual machine. `update.sh`, `auto-init.sh`, `backup-init.sh`, `backup.sh` and `restore.sh` have not yet been run
-end-to-end. Licensed under MIT.
+Review `install.sh` before running it: it installs software and uses `sudo`. All scripts were tested on a Debian virtual
+machine: `install.sh`, `update.sh --no-apt`, `auto-init.sh` (the timer was enabled), `backup-init.sh`, `backup.sh` and
+`restore.sh`. Still untested: importing Engram with real data (the test used an empty memory), the service run triggered by
+the timer, `auto-init.sh --publish`, and the `./install.sh wezterm` step on that VM. Licensed under MIT.
 
 [↑ Back to top / Volver arriba](#Instalacion-Completa-ia)
