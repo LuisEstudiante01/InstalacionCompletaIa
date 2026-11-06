@@ -57,6 +57,27 @@ Neovim config into that private repo. Nothing from you is ever pushed here.
 | `systemd/` | weekly timer units used by `backup-init.sh` |
 | `nvim/`, `herdr/`, `zsh/`, `claude/` | base configuration shipped as a starting point |
 
+## Credits
+
+This project is only an installer and a set of starting configs. The real work is done by the
+[Gentleman Programming](https://github.com/Gentleman-Programming) ecosystem. Huge thanks to its author and
+contributors for building these tools and keeping them open source.
+
+| Project | What it does |
+|---|---|
+| [gentle-ai](https://github.com/Gentleman-Programming/gentle-ai) | Configures the AI coding agents you already use (Claude Code, OpenCode, Codex, Pi and more): persistent memory, Organic Driven Development, curated skills, MCP servers, personas and optional bounded review. |
+| [gentle-shell](https://github.com/Gentleman-Programming/gentle-shell) (formerly `gentle-pi`) | A Pi-native terminal workspace for AI-assisted development: parallel coding agents, live tasks, Git diffs, persistent memory and permission controls in one interface. |
+| [engram](https://github.com/Gentleman-Programming/engram) | Persistent memory for AI coding agents: a single Go binary with SQLite + FTS5, an MCP server, HTTP API, CLI and TUI. |
+| [gentleman-guardian-angel](https://github.com/Gentleman-Programming/gentleman-guardian-angel) (`gga`) | Provider-agnostic AI code review that enforces your coding standards (Claude, Gemini, Codex, Ollama). |
+| [homebrew-tap](https://github.com/Gentleman-Programming/homebrew-tap) | The Homebrew tap that distributes gentle-ai, engram and gga, used by `install.sh`. |
+| [gentle-wiki](https://github.com/Gentleman-Programming/gentle-wiki) | Community-maintained guides and references on AI-assisted software development and the Gentleman Programming ecosystem. |
+| [gentle-ai-community-docs](https://github.com/Gentleman-Programming/gentle-ai-community-docs) | The bilingual (English/Spanish) community documentation for Gentle AI, at [docs-gentle-ai.netlify.app](https://docs-gentle-ai.netlify.app), also served to coding agents through a read-only MCP server. |
+| [Gentleman.Dots](https://github.com/Gentleman-Programming/Gentleman.Dots) | The author's personal LazyVim configuration. |
+
+Also used: [herdr](https://herdr.dev), [WezTerm](https://wezterm.org), [OpenCode](https://opencode.ai),
+[Claude Code](https://claude.ai) and [Homebrew](https://brew.sh).
+This repository is an independent community project and is not affiliated with or endorsed by any of them.
+
 ## Notes
 
 Review `install.sh` before running it: it installs software and uses `sudo`. It has been syntax-checked
